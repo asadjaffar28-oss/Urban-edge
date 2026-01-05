@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Urbane Edge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #f5f5f5;
+            --accent-color: #000000;
+            --text-color: #333;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn-hover {
+            transition: transform 0.2s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+        }
+        
+        .stat-number {
+            counter-reset: count;
+        }
+        
+        .stat-number::before {
+            counter-increment: count;
+            content: attr(data-count);
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #000 0%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gray-900 tracking-tight">
+                        URBANE EDGE
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-black font-medium">Home</a>
+                    <a href="shop.html" class="nav-link text-gray-700 hover:text-black font-medium">Shop</a>
+                    <a href="about.html" class="nav-link text-gray-700 hover:text-black font-medium">About</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-700 hover:text-black transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                    <button class="p-2 text-gray-700 hover:text-black transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-96 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent pointer-events-none"></div>
+        
+        <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in-up">Our Story</h1>
+            <p class="text-lg md:text-xl text-gray-300 fade-in-up" style="animation-delay: 0.2s">
+                Where urban sophistication meets contemporary edge
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-8">Our Mission</h2>
+                    <p class="text-gray-600 text-lg mb-6">
+                        At Urbane Edge, we believe that fashion should be more than just clothing—it should be a reflection of who you are and what you stand for. 
+                        We're committed to creating pieces that not only look exceptional but also align with your values.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Our mission is to bridge the gap between contemporary design and timeless elegance, offering modern individuals the opportunity to express their unique style without compromising on quality or ethics.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-3 h-3 bg-black rounded-full"></div>
+                            <span class="text-gray-700 font-medium">Sustainable Materials</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-3 h-3 bg-black rounded-full"></div>
+                            <span class="text-gray-700 font-medium">Ethical Production</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-3 h-3 bg-black rounded-full"></div>
+                            <span class="text-gray-700 font-medium">Timeless Design</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-3 h-3 bg-black rounded-full"></div>
+                            <span class="text-gray-700 font-medium">Quality Craftsmanship</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80" alt="About Urbane Edge" class="rounded-2xl shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-black text-white p-6 rounded-xl">
+                        <p class="text-sm font-semibold">EST. 2024</p>
+                        <p class="text-xs opacity-75">Fashion with purpose</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Journey -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
+                <p class="text-gray-600 text-lg">From a simple idea to a brand that stands for quality and style</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- 2020 -->
+                    <div class="timeline-item relative bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <div class="absolute left-6 top-6 w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-lg font-bold">
+                            2020
+                        </div>
+                        <div class="ml-24">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">The Beginning</h3>
+                            <p class="text-gray-600 text-lg">
+                                Founded with a vision to create clothing that combines urban sophistication with contemporary edge. 
+                                What started as a small collection has grown into a brand that resonates with modern individuals worldwide.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2021 -->
+                    <div class="timeline-item relative bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <div class="absolute left-6 top-6 w-16 h-16 bg-gray-800 text-white rounded-full flex items-center justify-center text-lg font-bold">
+                            2021
+                        </div>
+                        <div class="ml-24">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Growth & Expansion</h3>
+                            <p class="text-gray-600 text-lg">
+                                Expanded our collection to include more diverse styles while maintaining our commitment to quality and sustainability. 
+                                Our community of style-conscious individuals began to grow rapidly.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2022 -->
+                    <div class="timeline-item relative bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <div class="absolute left-6 top-6 w-16 h-16 bg-gray-600 text-white rounded-full flex items-center justify-center text-lg font-bold">
+                            2022
+                        </div>
+                        <div class="ml-24">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Sustainability Focus</h3>
+                            <p class="text-gray-600 text-lg">
+                                Made a commitment to sustainable practices, sourcing eco-friendly materials and implementing ethical production methods. 
+                                Proved that style and sustainability can go hand in hand.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2023 -->
+                    <div class="timeline-item relative bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <div class="absolute left-6 top-6 w-16 h-16 bg-gray-400 text-white rounded-full flex items-center justify-center text-lg font-bold">
+                            2023
+                        </div>
+                        <div class="ml-24">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Global Recognition</h3>
+                            <p class="text-gray-600 text-lg">
+                                Our designs gained international recognition, featured in major fashion publications and worn by style influencers around the world. 
+                                Continues to push boundaries while staying true to our core values.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024 -->
+                    <div class="timeline-item relative bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <div class="absolute left-6 top-6 w-16 h-16 bg-gray-200 text-black rounded-full flex items-center justify-center text-lg font-bold">
+                            2024
+                        </div>
+                        <div class="ml-24">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">The Future</h3>
+                            <p class="text-gray-600 text-lg">
+                                Looking ahead with excitement and determination. Committed to innovation, sustainability, and creating pieces that inspire confidence and individuality in everyone who wears them.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Statistics -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Impact</h2>
+                <p class="text-gray-300 text-lg">Numbers that tell our story</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="stat-number" data-count="500+">0</div>
+                    <h4 class="text-lg font-semibold text-gray-300 mt-2">Happy Customers</h4>
+                </div>
+                
+                <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="stat-number" data-count="100%">0</div>
+                    <h4 class="text-lg font-semibold text-gray-300 mt-2">Sustainable Materials</h4>
+                </div>
+                
+                <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="stat-number" data-count="20+">0</div>
+                    <h4 class="text-lg font-semibold text-gray-300 mt-2">Countries Reached</h4>
+                </div>
+                
+                <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="stat-number" data-count="98%">0</div>
+                    <h4 class="text-lg font-semibold text-gray-300 mt-2">Customer Satisfaction</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
+                <p class="text-gray-600 text-lg">Passionate individuals behind Urbane Edge</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center">
+                    <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Alex Morgan</h3>
+                    <p class="text-gray-600 mb-4">Creative Director</p>
+                    <p class="text-gray-500 text-sm">
+                        Visionary leader with 10+ years in fashion design, bringing innovative concepts to life.
+                    </p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center">
+                    <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sarah Kim</h3>
+                    <p class="text-gray-600 mb-4">Sustainability Manager</p>
+                    <p class="text-gray-500 text-sm">
+                        Environmental advocate ensuring our practices align with sustainable principles.
+                    </p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center">
+                    <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Marcus Chen</h3>
+                    <p class="text-gray-600 mb-4">Operations Lead</p>
+                    <p class="text-gray-500 text-sm">
+                        Master of logistics and production, ensuring quality in every detail.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-4">Join Our Journey</h2>
+            <p class="text-gray-300 mb-8">Be part of a brand that values style, sustainability, and individuality.</p>
+            <div class="space-x-4">
+                <a href="shop.html" class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors btn-hover inline-block">
+                    Explore Collection
+                </a>
+                <a href="index.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-colors btn-hover inline-block">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">URBANE EDGE</h3>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Redefining modern fashion with a commitment to quality, sustainability, and timeless design.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="shop.html" class="hover:text-white transition-colors">All Products</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">New Arrivals</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Best Sellers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Size Guide</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Shipping</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Returns</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2024 Urbane Edge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animate statistics on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statElement = entry.target;
+                    const targetValue = parseInt(statElement.getAttribute('data-count'));
+                    let currentValue = 0;
+                    const increment = targetValue / 50; // Animation duration
+                    
+                    const timer = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= targetValue) {
+                            currentValue = targetValue;
+                            clearInterval(timer);
+                        }
+                        statElement.textContent = Math.floor(currentValue) + (targetValue === 100 ? '%' : (targetValue === 98 ? '%' : '+'));
+                    }, 20);
+                    
+                    observer.unobserve(statElement);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            observer.observe(stat);
+        });
+
+        // Smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
